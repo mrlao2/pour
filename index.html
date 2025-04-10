@@ -1,0 +1,719 @@
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Pensacola | Professional Bartending Services</title>
+    <style>
+        :root {
+            --primary-color: #00bfb3; /* Teal from logo */
+            --secondary-color: #008b82; /* Darker teal */
+            --accent-color: #4fdbd2; /* Lighter teal */
+            --light-color: #e6fbfa; /* Very light teal */
+            --text-color: #1e4d54; /* Dark teal text */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 20px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            max-width: 100%;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-links .highlight a {
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links .highlight a:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 139, 130, 0.7), rgba(0, 139, 130, 0.7)), url('https://source.unsplash.com/1200x600/?beach,bartender');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 139, 130, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-img {
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        /* Alcohol Calculator Section */
+        .calculator {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .calculator-content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 139, 130, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .calculator-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .calculator-result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--light-color);
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .calculator-result h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Packages Section */
+        .packages {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .package-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 139, 130, 0.1);
+            text-align: center;
+        }
+        
+        .package-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .package-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .package-card ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .package-card ul li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-form {
+            padding: 30px;
+            background-color: var(--light-color);
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 139, 130, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cce6f0;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            padding: 30px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            border-radius: 5px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        /* Pour Up With Us Section */
+        .pour-up {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .pour-up-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pour-up-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .step-card {
+            padding: 30px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-color);
+            text-align: center;
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 139, 130, 0.1);
+            margin: 20px;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial .client {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        /* Gallery */
+        .gallery {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 5px;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 139, 130, 0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-img {
+                margin-bottom: 30px;
+            }
+            
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDMwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTgwIDIyQzEwMi4wOTEgMjIgMTIwIDM5LjkwOSAxMjAgNjJDMTIwIDg0LjA5MSAxMDIuMDkxIDEwMiA4MCA5N0M1Ny45MDkgOTcgNDAgODQuMDkxIDQwIDYyQzQwIDM5LjkwOSA1Ny45MDkgMjIgODAgMjJaIiBmaWxsPSIjMDBCRkIzIi8+CiAgPHBhdGggZD0iTTgwIDIyQzEwMC41MzIgMjIgMTE3LjU0NSAzNy44MjUgMTE5Ljc3OSA1OEgxNDBWMzBDMTQwIDI1LjU4MTcgMTQzLjU4MiAyMiAxNDggMjJIMTY2QzE3MC40MTggMjIgMTc0IDI1LjU4MTcgMTc0IDMwVjYyQzE3NCA2Ni40MTgzIDE3MC40MTggNzAgMTY2IDcwSDE0OEMxNDMuNTgyIDcwIDE0MCA2Ni40MTgzIDE0MCA2MlY3NEMxNDAgNzcuMzEzNyAxMzcuMzE0IDgwIDEzNCA4MEgxMjBDMTE3LjU0NSA4Mi4xNzUgMTAwLjUzMiA5NyA4MCA5N0M1Ny45MDkgOTcgNDAgODQuMDkxIDQwIDYyQzQwIDM5LjkwOSA1Ny45MDkgMjIgODAgMjJaIiBmaWxsPSIjMDBCRkIzIi8+CiAgPHBhdGggZD0iTTE5MCAyMkgyMDhDMjEyLjQxOCAyMiAyMTYgMjUuNTgxNyAyMTYgMzBWNjJDMjE2IDY2LjQxODMgMjEyLjQxOCA3MCAyMDggNzBIMTkwQzE4NS41ODIgNzAgMTgyIDY2LjQxODMgMTgyIDYyVjMwQzE4MiAyNS41ODE3IDE4NS41ODIgMjIgMTkwIDIyWiIgZmlsbD0iIzAwQkZCMyIvPgogIDxwYXRoIGQ9Ik0yMzUgMjBIMjU1QzI1OS40MTggMjAgMjYzIDIzLjU4MTcgMjYzIDI4VjQwTDI4NSA0MEMyODkuNDE4IDQwIDI5MyA0My41ODE3IDI5MyA0OFY3OEMyOTMgODIuNDE4MyAyODkuNDE4IDg2IDI4NSA4NkgyNTVDMjUwLjU4MiA4NiAyNDcgODIuNDE4MyAyNDcgNzhWNjZMMjI1IDY2QzIyMC41ODIgNjYgMjE3IDYyLjQxODMgMjE3IDU4VjI4QzIxNyAyMy41ODE3IDIyMC41ODIgMjAgMjI1IDIwSDIzNVoiIGZpbGw9IiMwMEJGQjMiLz4KICA8cGF0aCBkPSJNNzcuMzA5IDQxLjg0NUM3NS4wNjggMzUuMzg1IDY2LjcgMzguMjEyIDcwLjcyOCA0Ni4wMzRDNzUuMzU0IDU0Ljc2OSA4MSA0NiAzNSA0NkwzNSAyMkM2NC42MDggMjIgODAgMjAgODAgNDYuNjk0QzgwIDYxIDYyLjcyIDY5LjQ4NiA3Ny44MjYgNDcuMDA2Qzc5LjYyMSA0NC4zNDQgNzguMzI5IDQ0LjkyOSA3Ny4zMDkgNDEuODQ1WiIgZmlsbD0iIzAwQkZCMyIvPgogIDxwYXRoIGQ9Ik0xNTUgOTJIMTYxVjk3SDE0OVY5Mkg1NUw1NSA5N0g0NUw0NSA5MkgzNkwzNiA4N0g0NUw0NSA4Mkg1NUw1NSA4N0gxNDlWODJIMTYxVjg3SDE1NVY5MloiIGZpbGw9IiMwMEJGQjMiLz4KICA8cGF0aCBkPSJNMTY3IDkySDE4NVY5N0gxNjdWOTJaIiBmaWxsPSIjMDBCRkIzIi8+CiAgPHBhdGggZD0iTTE4OSA5MkgyMDZWOTdIMTg5VjkyWiIgZmlsbD0iIzAwQkZCMyIvPgogIDxwYXRoIGQ9Ik0yMjUgOTJIMjEwVjk3SDIyNVY5MloiIGZpbGw9IiMwMEJGQjMiLz4KICA8cGF0aCBkPSJNMjQyIDkySDIyN1Y5N0gyNDJWOTJaIiBmaWxsPSIjMDBCRkIzIi8+CiAgPHBhdGggZD9kPSJNMjQ2IDkySDI2M1Y5N0gyNDZWOTJaIiBmaWxsPSIjMDBCRkIzIi8+CiAgPHBhdGggZD0iTTI4NCA5MkgyNjdWOTdIMjg0VjkyWiIgZmlsbD0iIzAwQkZCMyIvPgo8L3N2Zz4K" alt="Pour Pensacola">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#calculator">Alcohol Calculator</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li class="highlight"><a href="#pour-up">Pour Up With Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Coastal-Inspired Bartending Services For Your Events</h1>
+                <p>Elevate your Pensacola event with our expert bartenders, custom cocktails, and exceptional Gulf Coast service</p>
+                <a href="#contact" class="btn">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer a range of premium bartending services to make your Pensacola event memorable</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i>🍸</i>
+                    <h3>Professional Bartenders</h3>
+                    <p>Our experienced and TIPS certified bartenders will provide exceptional service for your event</p>
+                </div>
+                <div class="service-card">
+                    <i>🍹</i>
+                    <h3>Custom Beach Cocktails</h3>
+                    <p>Signature coastal-inspired drinks designed specifically for your event theme and preferences</p>
+                </div>
+                <div class="service-card">
+                    <i>🥂</i>
+                    <h3>Full Bar Setup</h3>
+                    <p>Complete bar setup including professional equipment, fresh garnishes, and premium mixers</p>
+                </div>
+                <div class="service-card">
+                    <i>🧊</i>
+                    <h3>Mobile Beach Bar</h3>
+                    <p>Stylish portable bars that can be set up at any venue of your choice, perfect for beach events</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Get to know the team behind Pour Pensacola</p>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://source.unsplash.com/600x400/?bartender,cocktail" alt="About Pour Pensacola">
+                </div>
+                <div class="about-text">
+                    <h2>Pour Pensacola's Story</h2>
+                    <p>Pour Pensacola is the Gulf Coast's premier mobile bartending company serving Pensacola and the surrounding areas with exceptional service for all types of events.</p>
+                    <p>With over 10 years of experience in the coastal hospitality industry, our team of professional bartenders is dedicated to making your event unforgettable with a touch of beachy elegance.</p>
+                    <p>We pride ourselves on attention to detail, personalized service, and crafting the perfect beach-inspired drinks for your special occasion on the beautiful Gulf Coast.</p>
+                    <p>Our team is comprised of certified mixologists with experience in high-end establishments across the Southeast. We bring that expertise and passion to every event we service, ensuring that your guests receive only the best.</p>
+                    <a href="#contact" class="btn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alcohol Calculator Section -->
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Alcohol Calculator</h2>
+                <p>Plan your event with our easy-to-use alcohol calculator</p>
+            </div>
+            <div class="calculator-content">
+                <form class="calculator-form" id="alcohol-calculator">
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" id="guests" class="form-control" placeholder="Enter number of guests" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Event Duration (hours)</label>
+                        <input type="number" id="duration" class="form-control" placeholder="Enter event duration" min="1" max="24">
+                    </div>
+                    <div class="form-group">
+                        <label for="beer">Beer Options</label>
+                        <select id="beer" class="form-control">
+                            <option value="none">No Beer</option>
+                            <option value="light">Light Beer Only</option>
+                            <option value="mixed">Mixed Beer Selection</option>
+                            <option value="craft">Craft Beer Selection</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="wine">Wine Options</label>
+                        <select id="wine" class="form-control">
+                            <option value="none">No Wine</option>
+                            <option value="red">Red Wine Only</option>
+                            <option value="white">White Wine Only</option>
+                            <option value="both">Red and White Wine</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="spirits">Spirit Options</label>
+                        <select id="spirits" class="form-control">
+                            <option value="none">No Spirits</option>
+                            <option value="basic">Basic Spirits</option>
+                            <option value="premium">Premium Spirits</option>
+                            <option value="full">Full Bar Selection</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cocktails">Signature Cocktails</label>
+                        <input type="number" id="cocktails" class="form-control" placeholder="Number of signature cocktails" min="0" max="5">
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                        <button type="button" class="btn" style="width: 100%;" onclick="calculateAlcohol()">Calculate</button>
+                    </div>
+                </form>
+                <div class="calculator-result" id="calculator-result">
+                    <h3>Your Estimated Needs</h3>
+                    <p>Enter your event details above to get a personalized alcohol estimate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pour Up With Us Section -->
+    <section id="pour-up" class="pour-up">
+        <div class="container">
+            <div class="section-title">
